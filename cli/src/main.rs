@@ -33,7 +33,7 @@ mod spl_token_transfer;
 #[derive(Clap, Debug)]
 struct Opts {
     /// Address of the Multisig program.
-    #[clap(long, default_value = "H88LfRBiJLZ7wYkHGuwkKTaijfQxexq8JvzUndu7fyjL")]
+    #[clap(long, default_value = "msigmtwzgXJHj2ext4XJjCDmpbcMuufFb5cHuwg6Xdt")]
     multisig_program_id: InputPubkey,
 
     /// The keypair to sign and pay with. [default: ~/.config/solana/id.json]
