@@ -33,7 +33,7 @@ mod spl_token_transfer;
 #[derive(Clap, Debug)]
 struct Opts {
     /// Address of the Multisig program.
-    #[clap(long, default_value = "H88LfRBiJLZ7wYkHGuwkKTaijfQxexq8JvzUndu7fyjL")]
+    #[clap(long, default_value = "msigmtwzgXJHj2ext4XJjCDmpbcMuufFb5cHuwg6Xdt")]
     multisig_program_id: InputPubkey,
 
     /// The keypair to sign and pay with. [default: ~/.config/solana/id.json]
@@ -744,9 +744,10 @@ pub(crate) fn propose_instruction(
         .expect("Failed to serialize dummy transaction.");
     account_bytes.extend(&multisig::Transaction::discriminator()[..]);
     println!(
-        "create tx account owned by {}, size {}",
+        "create tx account owned by {}, size {}, address {}",
         &program.id(),
-        account_bytes.len()
+        account_bytes.len(),
+        transaction_account.pubkey()
     );
     program
         .request()
