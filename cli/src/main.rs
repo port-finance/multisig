@@ -744,9 +744,10 @@ pub(crate) fn propose_instruction(
         .expect("Failed to serialize dummy transaction.");
     account_bytes.extend(&multisig::Transaction::discriminator()[..]);
     println!(
-        "create tx account owned by {}, size {}",
+        "create tx account owned by {}, size {}, address {}",
         &program.id(),
-        account_bytes.len()
+        account_bytes.len(),
+        transaction_account.pubkey()
     );
     program
         .request()
