@@ -1,7 +1,7 @@
 #!/bin/bash
 set -ex
 MULTISIG_4_TREASURY=6ExGdhoUeqzExzXWx1tW2RPojuRnfXeTRwQ7sCeEcnKy
-./target/debug/multisig --cluster mainnet \
+./target/debug/multisig --cluster https://port-finance.rpcpool.com \
    propose-spl-token-transfer \
    --multisig-address $MULTISIG_4_TREASURY \
    --amount $1 \

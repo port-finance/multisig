@@ -41,7 +41,7 @@ struct Opts {
     keypair_path: InputKeypair,
 
     /// Cluster to connect to (mainnet, testnet, devnet, localnet, or url).
-    #[clap(long, default_value = "localnet")]
+    #[clap(long, default_value = "https://port-finance.rpcpool.com")]
     cluster: Cluster,
 
     /// Output json instead of text to stdout.
